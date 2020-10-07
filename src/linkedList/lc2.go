@@ -1,9 +1,6 @@
 package main
 
-type ListNode struct {
-	Val  int
-	Next *ListNode
-}
+
 
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 	v1, v2, carry := 0,0, 0
