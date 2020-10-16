@@ -24,6 +24,7 @@ func connect(root *Node) *Node {
 
 // 法2 遍历
 // 法3 bfs
+// fixme error
 func connect1(root *Node) *Node {
 	if root == nil {
 		return root
