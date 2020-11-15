@@ -39,15 +39,16 @@ func nextPermutation(nums []int) {
 		}
 		return
 	}
+	//
 	for k >= j && nums[k] <= nums[i] {
 		k--
 	}
 
 	//
 	nums[i], nums[k] = nums[k], nums[i]
+	//
 	k = length - 1
 	// fmt.Println(i, j,k)
-
 	for j < k {
 		nums[j], nums[k] = nums[k], nums[j]
 		j++
