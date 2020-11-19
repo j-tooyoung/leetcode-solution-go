@@ -42,12 +42,15 @@ func moveZeroes1(nums []int) {
 func moveZeroes2(nums []int) {
 	sort.Slice(nums, func(i, j int) bool {
 		a, b := nums[i], nums[j]
-		if a == 0 {
+		if a == 0 && b != 0 {
 			return false
 		}
-		if b == 0 {
+		if b == 0 && a != 0 {
 			return true
 		}
-		return i < j
+		if a!= 0 && b != 0 {
+			return i < j
+		}
+		return false
 	})
 }
