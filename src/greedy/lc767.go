@@ -1,17 +1,37 @@
 package main
 
-import "sort"
-
 func reorganizeString(S string) string {
 	cnt := make([]int, 26)
+	maxCnt := -1
 	for _, s := range S {
 		cnt[s-'a']++
 	}
-	var res string
-	sort.Ints(cnt)
-	sum := 0
-	for i := 0; i +1 < len(cnt); i++ {
-		sum += 0
+	idx:= 0
+	for i, val := range cnt {
+		if maxCnt < val {
+			idx = i
+			maxCnt = val
+		}
 	}
-	return res
+	if maxCnt > len(S) >>1 {
+		return ""
+	}
+	res := make([]byte,len(S))
+	for i := 1; i < len(S); i+= 2 {
+		for cnt[i] >0 {
+			cnt[i]--
+			res[idx] = byte('a' + i)
+			idx+= 2
+		}
+	}
+	for i := 1; i < len(S); i++ {
+	}
+	return string(res)
+}
+
+func max(i int, j int) int {
+	if i < j {
+		return j
+	}
+	return i
 }
