@@ -19,12 +19,6 @@ func searchRange(nums []int, target int) []int {
 	// fmt.Println(lo)
 	hi := upperbound(nums, target)
 	return []int{lo, hi}
-	// lo := sort.SearchInts(nums, target)
-	// if lo == len(nums) || nums[lo] != target {
-	// 	return []int{-1, -1}
-	// }
-	// hi := sort.SearchInts(nums, target+1) - 1
-	// return []int{lo, hi}
 }
 
 //第一个>=target的最小数
